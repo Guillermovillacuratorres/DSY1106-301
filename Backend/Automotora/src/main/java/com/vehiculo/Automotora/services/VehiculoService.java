@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.vehiculo.Automotora.models.dto.MarcaDto;
 import com.vehiculo.Automotora.models.entities.Vehiculo;
+import com.vehiculo.Automotora.models.request.VehiculoActualizarRequest;
 import com.vehiculo.Automotora.models.request.VehiculoRequest;
 import com.vehiculo.Automotora.repositories.VehiculoRepository;
 
@@ -57,6 +58,29 @@ public class VehiculoService {
         
     }
 
+
+    public Vehiculo actualizarAuto(VehiculoActualizarRequest autoEditado){
+        Vehiculo autoExiste = vehiRepo.findById(autoEditado.getId_vehiculo()).orElse(null);
+        if (autoExiste == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehiculo no encontrado.");
+        }
+        autoExiste.setColor(autoEditado.getColor());
+        autoExiste.setId_marca(autoEditado.getId_marca());
+        autoExiste.setModelo(autoEditado.getModelo());
+        autoExiste.setPatente(autoEditado.getPatente());
+        return vehiRepo.save(autoExiste);
+    }
+
+
+    public String eliminarVehiculo(int idVehiculo){
+        Vehiculo autoExiste = vehiRepo.findById(idVehiculo).orElse(null);
+        if (autoExiste == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehiculo no encontrado.");
+        }
+
+        vehiRepo.deleteById(idVehiculo);
+        return "Vehiculo eliminado!";
+    }
 
     
 }

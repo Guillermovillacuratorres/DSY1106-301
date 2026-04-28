@@ -1,0 +1,28 @@
+#### AGREGAR AUTO
+POST http://localhost:7575/vehiculo HTTP/1.1
+content-type: application/json
+
+{
+    "patente":"ABCD12",
+    "id_marca":2,
+    "color":"Rojo",
+    "modelo":"Supra"
+}
+
+
+#### ACTUALIZAR AUTO
+PUT http://localhost:7575/vehiculo HTTP/1.1
+content-type: application/json
+
+{
+    "id_vehiculo":2,
+    "patente":"ABCD12",
+    "id_marca":3,
+    "color":"Rojo",
+    "modelo":"Supra"
+}
+
+####ELIMINAR AUTO
+DELETE http://localhost:7575/vehiculo/6 HTTP/1.1
+content-type: application/json
+
