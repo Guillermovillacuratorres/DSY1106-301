@@ -3,12 +3,26 @@
 <h1>Mi nombre es: {{nombre}}</h1>
 <h4>Mi edad es: {{edad}}</h4>
 
-<img src="img/mc.webp" alt="">
-<img [src]="imagen" alt="">
+<!-- <img src="img/mc.webp" alt="">   ctrl + k  + u -->
 
+ 
 
-@for (i of items; track item.name) {
+@for (i of vehiculos; track i.id_vehiculo) {
 
-<h1>{{i.name}}</h1>
+    
+    @if (i.imagen.length == 0){
+        <img src="img/no.avif" style="width: 300px; height: 300px;" alt="">
+    }@else {
+        <img [src]="imagen" alt="">
+    }
 
+    @if (i.patente.length == 0) {
+        <h1>Patente: Sin registros</h1>
+        
+    } 
+    @else {
+        <h1>Patente: {{i.patente}}</h1>
+    }
+} @empty {
+<li>There are no items.</li>
 }
