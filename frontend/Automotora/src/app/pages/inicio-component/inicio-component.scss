@@ -1,4 +1,78 @@
-p{
-    font-size: 30px;
-    color: blue;
+.card {
+  width: 280px;
+  background: #1a1a1a;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.header {
+  background: linear-gradient(to bottom, #ff9000, #ff5e00);
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header img {
+  height: 90%;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+
+.info {
+  padding: 15px;
+}
+
+.info small {
+  color: #ff9000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.info h2 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.ki-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+}
+
+.ki-box b {
+  color: #00ff88;
+}
+
+
+/* Contenedor principal para las cards */
+.grid-container {
+  display: grid;
+  /* Crea columnas de mínimo 280px, llenando el espacio disponible */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 20px;
+  justify-items: center; /* Centra la card si sobra espacio */
+}
+
+/* Tu .card se mantiene igual, solo asegúrate de quitar márgenes externos innecesarios */
+.card {
+  width: 280px;
+  background: #1a1a1a;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }

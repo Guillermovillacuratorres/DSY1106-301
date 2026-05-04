@@ -1,3 +1,22 @@
+<div class="grid-container">
+  @for (p of personajes; track p.id) {
+    <div class="card">
+      <div class="header">
+        <img [src]="p.image" alt="img">
+      </div>
+      <div class="info">
+        <small>{{p.race}} - {{p.affiliation}}</small>
+        <h2>{{p.name}}</h2>
+        <div class="ki-box">
+          <span>KI: <b>{{p.ki}}</b></span>
+          <span>MAX: <b>{{p.maxKi}}</b></span>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+
 <p>inicio-component works!</p>
 
 <h1>Mi nombre es: {{nombre}}</h1>
