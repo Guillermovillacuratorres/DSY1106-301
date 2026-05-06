@@ -1,5 +1,5 @@
-<div class="grid-container">
-  @for (p of personajes; track p.id) {
+  <div class="grid-container">
+      @for (p of personajes; track p.id) {
     <div class="card">
       <div class="header">
         <img [src]="p.image" alt="img">
@@ -45,3 +45,31 @@
 } @empty {
 <li>There are no items.</li>
 }
+
+
+
+<div class="form-container">
+  <h2>Registro de Vehículo</h2>
+  
+  <div class="form-group">
+    <label>Patente</label>
+    <input [(ngModel)]="patente" type="text" placeholder="Ej: ABCD-12">
+  </div>
+
+  <div class="form-group">
+    <label>Color</label>
+    <input [(ngModel)]="color" type="text" placeholder="Ej: Rojo">
+  </div>
+
+  <div class="form-group">
+    <label>Marca</label>
+    <input [(ngModel)]="marca" type="text" placeholder="Ej: Toyota">
+  </div>
+
+  <div class="form-group">
+    <label>Modelo</label>
+    <input [(ngModel)]="modelo" type="text" placeholder="Ej: Corolla">
+  </div>
+
+  <button class="btn-submit" (click)="crearAuto()">Agregar auto</button>
+</div>

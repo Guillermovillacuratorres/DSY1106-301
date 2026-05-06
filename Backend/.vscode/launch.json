@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AutomotoraApplication<Automotora>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.vehiculo.Automotora.AutomotoraApplication",
+            "projectName": "Automotora",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MarcaApplication<marca>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.automotora.marca.MarcaApplication",
+            "projectName": "marca",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

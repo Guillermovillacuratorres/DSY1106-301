@@ -5,3 +5,12 @@ export interface Vehiculo{
     color:string;
     tamanio_motor?:number;
 }
+
+
+export interface Vehiculo2{
+    id_vehiculo:number;
+    patente:string;
+    id_marca:number;
+    color:string;
+    modelo:string;
+}
