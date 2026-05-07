@@ -19,11 +19,27 @@ export class VehiculoService {
     return await lastValueFrom(this.http.post<Vehiculo2>(environment.urlVehiculo, autoNuevo));
   }
 
+  async editarVehiculo(autoEditado: bodyEditarAuto){
+    return await lastValueFrom(this.http.put<any>(environment.urlVehiculo,autoEditado));
+  }
+
+  async obtenerVehiculoPorId(id_vehiculo:number){
+    return await lastValueFrom(this.http.get<Vehiculo2>(`${environment.urlVehiculo}/${id_vehiculo}`));
+    //alt + 96
+  }
 
 }
 
 
 interface bodyAgregarAuto{
+  "patente": string;
+  "id_marca": number;
+  "color":string;
+  "modelo": string;
+}
+
+interface bodyEditarAuto{
+  "id_vehiculo":number,
   "patente": string;
   "id_marca": number;
   "color":string;

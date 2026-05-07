@@ -55,6 +55,12 @@ public class VehiculoController {
         return vehiculoService.eliminarVehiculo(idVehiculo);
     }
 
+
+    @GetMapping("/{idVehiculo}")
+    public Vehiculo obtenerVehiculoPorId(@PathVariable int idVehiculo){
+        return vehiculoService.obtenerAutoPorId(idVehiculo);
+    }
+
     //POST
 
     //PUT

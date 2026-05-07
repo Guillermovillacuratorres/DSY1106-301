@@ -73,3 +73,54 @@
 
   <button class="btn-submit" (click)="crearAuto()">Agregar auto</button>
 </div>
+
+
+
+
+
+
+
+
+<div class="table-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Patente</th>
+        <th>Marca (ID)</th>
+        <th>Modelo</th>
+        <th>Color</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+
+    
+
+
+    <tbody>
+      @for (v of vehiculos2; track v.id_vehiculo) {
+        <tr>
+          <td>{{ v.id_vehiculo }}</td>
+          <td><span class="badge-patente">{{ v.patente }}</span></td>
+          <td>{{ v.id_marca }}</td>
+          <td>{{ v.modelo }}</td>
+          <td>
+            <div class="color-flex">
+              <span class="color-dot" [style.background-color]="v.color"></span>
+              {{ v.color }}
+            </div>
+          </td>
+          <td>
+            <button (click)="editar(v)">Editar</button>
+            <button (click)="eliminar(v.id_vehiculo)">Eliminar</button>
+          </td>
+          
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5" class="no-data">No hay vehículos registrados</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

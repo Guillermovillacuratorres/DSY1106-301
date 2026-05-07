@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Vehiculo } from '../../models/Vehiculo';
+import { Vehiculo, Vehiculo2 } from '../../models/Vehiculo';
 import { PersonajesService } from '../../services/personajes-service';
 import { Personaje } from '../../models/personaje';
 import { VehiculoService } from '../../services/vehiculo-service';
@@ -26,6 +26,7 @@ export class InicioComponent implements OnInit {
   //constructor(private vehiculoService:VehiculoService){}
 
   personajes:any[]=[];
+  vehiculos2:any;
 
   ngOnInit() {
     console.table(this.vehiculos);
@@ -34,6 +35,19 @@ export class InicioComponent implements OnInit {
     this.cargarVehiculos();
     //this.crearAuto();
   }
+
+
+  editar(auto:Vehiculo2){
+    console.log("METODO EDITAR ->", auto);
+  }
+
+  eliminar(id_vehiculo:number){
+    console.log("METODO ELIMINAR -> ", id_vehiculo);
+  }
+
+
+
+
 
   async crearAuto(){
     const req = await this.vehiculoService.crearVehiculo({
@@ -54,6 +68,9 @@ export class InicioComponent implements OnInit {
 
   async cargarVehiculos(){
     const req = await this.vehiculoService.obtenerVehiculos();
+    this.vehiculos2 = req;
+    console.log("VEHICULO PROPIEDAD ", this.vehiculos2);
+    
   }
 
   nombre:string = "Juanito";

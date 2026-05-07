@@ -25,6 +25,12 @@ public class VehiculoService {
     private WebClient webClient;
 
 
+
+    public Vehiculo obtenerAutoPorId(int id_auto){
+        return vehiRepo.findById(id_auto).orElse(null);
+    }
+
+
     public List<Vehiculo> obtenerTodosLosAutos(){
         return vehiRepo.findAll();
     }
