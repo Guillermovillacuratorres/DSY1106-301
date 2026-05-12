@@ -28,6 +28,10 @@ export class VehiculoService {
     //alt + 96
   }
 
+  async eliminarVehiculo(idVehiculo:number){
+    return await lastValueFrom(this.http.delete<any>(`${environment.urlVehiculo}/${idVehiculo}`))
+  }
+
 }
 
 

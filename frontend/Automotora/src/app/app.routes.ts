@@ -9,7 +9,7 @@ export const routes: Routes = [
     component: InicioComponent,
   },
   {
-    path: 'editar',
+    path: 'editar/:idVehiculo',
     component: EditarVehiculoComponent,
   },
   {

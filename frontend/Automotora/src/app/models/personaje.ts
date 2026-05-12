@@ -6,7 +6,7 @@ export interface Personaje{
 
 
 
-interface Item{
+export interface Item{
     "id": number;
     "name": string;
     "ki":  string;
