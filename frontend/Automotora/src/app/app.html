@@ -1,1 +1,5 @@
 <router-outlet />
+
+@if(router.url != '/login' && router.url != '/registro'){
+<app-footer-component></app-footer-component>
+}

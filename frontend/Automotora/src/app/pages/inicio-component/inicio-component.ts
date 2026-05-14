@@ -5,6 +5,8 @@ import { Item, Personaje } from '../../models/personaje';
 import { VehiculoService } from '../../services/vehiculo-service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
+
 
 
 @Component({
@@ -20,6 +22,7 @@ export class InicioComponent implements OnInit {
   private vehiculoService = inject(VehiculoService);
   private cdr = inject(ChangeDetectorRef);
   private router = inject(Router);
+  private authService = inject(AuthService);
 
   patente:string = "";
   marca:number = 0;
@@ -39,6 +42,14 @@ export class InicioComponent implements OnInit {
     this.cargaPersonaje();
     this.cargarVehiculos();
     //this.crearAuto();
+    this.authService.agregarStorage({
+      nombre:"Juanito",
+      apellido:"Perez"
+    });
+
+    console.log(this.authService.obtenerStorage());
+    
+
   }
 
 
@@ -78,6 +89,8 @@ export class InicioComponent implements OnInit {
   }
 
   async cargarVehiculos(){
+    
+
     const req = await this.vehiculoService.obtenerVehiculos();
     this.vehiculos2 = req;
     console.log("VEHICULO PROPIEDAD ", this.vehiculos2);
